@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Encyclopedia Entry feature.
+ */
+
+include_once 'stanford_encyclopedia_entry.features.inc';
