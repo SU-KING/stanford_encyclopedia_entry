@@ -50,7 +50,51 @@ function stanford_encyclopedia_entry_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-stanford_encyclopedia_entry-field_related_historicalmaterial'.
+  $field_instances['node-stanford_encyclopedia_entry-field_related_historicalmaterial'] = array(
+    'bundle' => 'stanford_encyclopedia_entry',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related_historicalmaterial',
+    'label' => 'Related Historical Material',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 14,
     ),
   );
 
@@ -86,53 +130,11 @@ function stanford_encyclopedia_entry_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-stanford_encyclopedia_entry-field_s_encyc_conjectured_date'.
-  $field_instances['node-stanford_encyclopedia_entry-field_s_encyc_conjectured_date'] = array(
-    'bundle' => 'stanford_encyclopedia_entry',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'This indicates to the reader that the given date is conjectured.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_s_encyc_conjectured_date',
-    'label' => 'Conjectured Date',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
       'settings' => array(
-        'display_label' => 1,
+        'apply_chosen' => 1,
       ),
-      'type' => 'options_onoff',
-      'weight' => 4,
+      'type' => 'options_select',
+      'weight' => 3,
     ),
   );
 
@@ -245,7 +247,7 @@ function stanford_encyclopedia_entry_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -390,7 +392,7 @@ function stanford_encyclopedia_entry_field_default_field_instances() {
         'year_range' => '1929:2027',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -426,7 +428,9 @@ function stanford_encyclopedia_entry_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => 2,
     ),
@@ -472,7 +476,7 @@ function stanford_encyclopedia_entry_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -480,17 +484,16 @@ function stanford_encyclopedia_entry_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Choose the appropriate category tag(s).');
-  t('Conjectured Date');
   t('Entry Type');
   t('Featured');
   t('Featured Image');
   t('Footnotes');
   t('Related Entries');
   t('Related Event Entries');
+  t('Related Historical Material');
   t('Relevant Dates');
   t('Select a featured image for the encyclopedia entry and add an optional caption.');
   t('This displays related encyclopedia entries that are on the site. Begin typing an encyclopedia entry and it will autocomplete.');
-  t('This indicates to the reader that the given date is conjectured.');
   t('Topic');
 
   return $field_instances;
